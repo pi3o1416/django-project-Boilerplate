@@ -25,6 +25,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
+
 ALLOWED_HOSTS = []
 
 
@@ -188,9 +189,9 @@ SIMPLE_JWT = {
 
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Task Management Project",
-    "DESCRIPTION": "A task management project to maintain tasks efficiently",
-    "VERSION": "2.0.0",
+    "TITLE": "Project Title",
+    "DESCRIPTION": "Project Documentation",
+    "VERSION": "0.0.1",
 }
 
 # Shell plus configuration
