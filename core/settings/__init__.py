@@ -13,5 +13,7 @@ if env is not None:
         from .prod import *
     elif current_stage == 'DEV':
         from .dev import *
+    else:
+        raise ValueError('Invalid Value of STAGE')
 else:
     raise FileNotFoundError('Env file does not exist')
