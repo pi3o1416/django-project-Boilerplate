@@ -10,11 +10,10 @@ class CustomJSONRenderer(JSONRenderer):
             "error": None,
         }
         response = renderer_context.get("response")
-        message = response.context_data.get('message') if type(response.context_data) is dict else None
         custom_data["status"] = response.status_code
-        custom_data["message"] = message
+        custom_data["message"] = data['message'] if 'message' in data else None
         if response.status_code >= 400:
-            custom_data["error"] = data
+            custom_data["error"] = data['detail']
         else:
-            custom_data["data"] = data
+            custom_data["data"] = data['detail']
         return super().render(custom_data, accepted_media_type, renderer_context)
